@@ -201,7 +201,7 @@ class Yolov8Trainer(object):
         accumulate = accumulate = max(1, round(64 / self.args.batch_size))
 
         # Train one epoch
-        with tqdm_notebook(total=epoch_size, desc=f"Train {epoch+1}") as pbar:
+        with tqdm_notebook(total=len(self.train_loader), desc=f"Train {epoch+1}") as pbar:
             for iter_i, (images, targets) in enumerate(self.train_loader):
                 ni = iter_i + self.epoch * epoch_size
                 # Warmup
@@ -574,7 +574,7 @@ class YoloxTrainer(object):
         nw = epoch_size * self.args.wp_epoch
 
         # Train one epoch
-        with tqdm_notebook(total=epoch_size, desc=f"Train {epoch+1}") as pbar:
+        with tqdm_notebook(total=len(self.train_loader), desc=f"Train {epoch+1}") as pbar:
             for iter_i, (images, targets) in enumerate(self.train_loader):
                 ni = iter_i + self.epoch * epoch_size
                 # Warmup
@@ -944,7 +944,7 @@ class RTCTrainer(object):
         nw = epoch_size * self.args.wp_epoch
 
         # Train one epoch
-        with tqdm_notebook(total=epoch_size, desc=f"Train {epoch+1}") as pbar:
+        with tqdm_notebook(total=len(self.train_loader), desc=f"Train {epoch+1}") as pbar:
             for iter_i, (images, targets) in enumerate(self.train_loader):
                 ni = iter_i + self.epoch * epoch_size
                 # Warmup
@@ -1318,7 +1318,7 @@ class RTRTrainer(object):
         nw = epoch_size * self.args.wp_epoch
 
         # Train one epoch
-        with tqdm_notebook(total=epoch_size, desc=f"Train {epoch+1}") as pbar:
+        with tqdm_notebook(total=len(self.train_loader), desc=f"Train {epoch+1}") as pbar:
             for iter_i, (images, targets) in enumerate(self.train_loader):
                 ni = iter_i + self.epoch * epoch_size
                 # Warmup
