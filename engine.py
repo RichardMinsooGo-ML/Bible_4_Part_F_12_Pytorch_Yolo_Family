@@ -5,6 +5,7 @@ import time
 import os
 import numpy as np
 import random
+import tqdm
 
 # ----------------- Extra Components -----------------
 from utils import distributed_utils
