@@ -6,6 +6,7 @@ import os
 import numpy as np
 import random
 import tqdm
+from tqdm import tqdm, tqdm_notebook, trange
 
 # ----------------- Extra Components -----------------
 from utils import distributed_utils
