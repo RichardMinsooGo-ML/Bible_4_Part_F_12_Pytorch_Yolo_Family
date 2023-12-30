@@ -134,7 +134,7 @@ class Yolov8Trainer(object):
                 self.eval(model_eval)
             else:
                 model_eval = model.module if self.args.distributed else model
-                if (epoch % self.args.eval_epoch) == 0 or (epoch == self.args.max_epoch - 1):
+                if (epoch+1 % self.args.eval_epoch) == 0 or (epoch == self.args.max_epoch - 1):
                     self.eval(model_eval)
 
             if self.args.debug:
@@ -508,7 +508,7 @@ class YoloxTrainer(object):
                 self.eval(model_eval)
             else:
                 model_eval = model.module if self.args.distributed else model
-                if (epoch % self.args.eval_epoch) == 0 or (epoch == self.args.max_epoch - 1):
+                if (epoch+1 % self.args.eval_epoch) == 0 or (epoch == self.args.max_epoch - 1):
                     self.eval(model_eval)
 
             if self.args.debug:
@@ -878,7 +878,7 @@ class RTCTrainer(object):
                 self.eval(model_eval)
             else:
                 model_eval = model.module if self.args.distributed else model
-                if (epoch % self.args.eval_epoch) == 0 or (epoch == self.args.max_epoch - 1):
+                if (epoch+1 % self.args.eval_epoch) == 0 or (epoch == self.args.max_epoch - 1):
                     self.eval(model_eval)
 
             if self.args.debug:
@@ -1255,7 +1255,7 @@ class RTRTrainer(object):
                 self.eval(model_eval)
             else:
                 model_eval = model.module if self.args.distributed else model
-                if (epoch % self.args.eval_epoch) == 0 or (epoch == self.args.max_epoch - 1):
+                if (epoch+1 % self.args.eval_epoch) == 0 or (epoch == self.args.max_epoch - 1):
                     self.eval(model_eval)
 
 
