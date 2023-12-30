@@ -6,7 +6,6 @@ import os
 import numpy as np
 import random
 import tqdm
-from tqdm import tqdm, tqdm_notebook, trange
 
 # ----------------- Extra Components -----------------
 from utils import distributed_utils
@@ -288,7 +287,7 @@ class Yolov8Trainer(object):
                     break
     
                 pbar.update(1)
-                pbar.set_postfix_str(f"Iter: {iter_i}/{epoch_size} lr: {cur_lr[2]:.4f}")
+                # pbar.set_postfix_str(f"Iter: {iter_i}/{epoch_size} lr: {cur_lr[2]:.4f}")
             
         # LR Schedule
         self.lr_scheduler.step()
@@ -656,7 +655,7 @@ class YoloxTrainer(object):
                     break
     
                 pbar.update(1)
-                pbar.set_postfix_str(f"Iter: {iter_i}/{epoch_size} lr: {cur_lr[2]:.4f}")
+                # pbar.set_postfix_str(f"Iter: {iter_i}/{epoch_size} lr: {cur_lr[2]:.4f}")
             
         # LR Schedule
         if not self.second_stage:
@@ -1033,7 +1032,7 @@ class RTCTrainer(object):
                     break
     
                 pbar.update(1)
-                pbar.set_postfix_str(f"Iter: {iter_i}/{epoch_size} lr: {cur_lr[2]:.4f}")
+                # pbar.set_postfix_str(f"Iter: {iter_i}/{epoch_size} lr: {cur_lr[2]:.4f}")
             
         # LR Schedule
         if not self.second_stage:
@@ -1406,7 +1405,7 @@ class RTRTrainer(object):
                     t0 = time.time()
     
                 pbar.update(1)
-                pbar.set_postfix_str(f"Iter: {iter_i}/{epoch_size} lr: {cur_lr[2]:.4f}")
+                # pbar.set_postfix_str(f"Iter: {iter_i}/{epoch_size} lr: {cur_lr[2]:.4f}")
             
         # LR Schedule
         if not self.second_stage:
